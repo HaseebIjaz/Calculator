@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{C2E3AB35-02F3-4092-A706-636F09177BB1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{680CC72C-3BE2-48FE-A152-B38C682B71DF} = {680CC72C-3BE2-48FE-A152-B38C682B71DF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTests", "CalculatorTests\CalculatorTests.csproj", "{5AA02C81-2177-4193-B722-305FFCB795EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorModel", "CalculatorModel\CalculatorModel.csproj", "{680CC72C-3BE2-48FE-A152-B38C682B71DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2E3AB35-02F3-4092-A706-636F09177BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E3AB35-02F3-4092-A706-636F09177BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E3AB35-02F3-4092-A706-636F09177BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E3AB35-02F3-4092-A706-636F09177BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AA02C81-2177-4193-B722-305FFCB795EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA02C81-2177-4193-B722-305FFCB795EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA02C81-2177-4193-B722-305FFCB795EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA02C81-2177-4193-B722-305FFCB795EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680CC72C-3BE2-48FE-A152-B38C682B71DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680CC72C-3BE2-48FE-A152-B38C682B71DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680CC72C-3BE2-48FE-A152-B38C682B71DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680CC72C-3BE2-48FE-A152-B38C682B71DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {601BE594-A335-4432-B218-4ED48260A2C3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.lmkr.net/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Calculator\\Calculator.csproj
+		SccProjectName1 = Calculator
+		SccLocalPath1 = Calculator
+		SccProjectUniqueName2 = CalculatorTests\\CalculatorTests.csproj
+		SccProjectName2 = CalculatorTests
+		SccLocalPath2 = CalculatorTests
+		SccProjectUniqueName3 = CalculatorModel\\CalculatorModel.csproj
+		SccProjectName3 = CalculatorModel
+		SccLocalPath3 = CalculatorModel
+	EndGlobalSection
+EndGlobal

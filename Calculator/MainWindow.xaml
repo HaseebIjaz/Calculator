@@ -1,0 +1,151 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="0" Key="NumPad0 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="1" Key="NumPad1 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="2" Key="NumPad2 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="3" Key="NumPad3 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="4" Key="NumPad4 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="5" Key="NumPad5 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="6" Key="NumPad6 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="7" Key="NumPad7 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="8" Key="NumPad8 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="9" Key="NumPad9 " />
+        <KeyBinding Command="{Binding HandleNumpadNumberButtonCommand}"  CommandParameter="." Key="Decimal " />
+        <KeyBinding Command="{Binding HandleOperatorPadCommand}"  CommandParameter="+" Key="Add" />
+        <KeyBinding Command="{Binding HandleOperatorPadCommand}"  CommandParameter="-" Key="Subtract" />
+        <KeyBinding Command="{Binding HandleOperatorPadCommand}"  CommandParameter="*" Key="Multiply" />
+        <KeyBinding Command="{Binding HandleOperatorPadCommand}"  CommandParameter="/" Key="Divide" />
+        <KeyBinding Command="{Binding HandleNumpadEqualButtonCommand}"   Key="Enter" />
+        <KeyBinding Command="{Binding HandleNumpadEqualButtonCommand}"   Key="Return" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="0" Key="D0  " />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="1" Key="D1" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="2" Key="D2" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="3" Key="D3" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="4" Key="D4" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="5" Key="D5" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="6" Key="D6" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="7" Key="D7" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="8" Key="D8" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="9" Key="D9" />
+        <KeyBinding Command="{Binding HandleNumPadNumberButtonCommand}"  CommandParameter="." Key="OemPeriod " />
+        <KeyBinding Command="{Binding HandleOperatorPadCommand}"  CommandParameter="+" Key="OemPlus" />
+        <KeyBinding Command="{Binding HandleOperatorPadCommand}"  CommandParameter="-" Key="OemMinus" />
+        <KeyBinding Command="{Binding HandleBackspaceCommand}"   Key="Back" />
+
+
+
+    </Window.InputBindings>
+
+    <Grid Name="WindowGrid" Margin="10,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="242*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="360*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="191*"></RowDefinition>
+            <RowDefinition Height="218*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="4"></Border>
+
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,11,10,2" RenderTransformOrigin="0.466,0.75">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="661*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="94*"></RowDefinition>
+                <RowDefinition Height="61"></RowDefinition>
+                <RowDefinition Height="33*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Background="AliceBlue" FontSize="30" Text="{Binding ExpressionString,IsAsync=False,FallbackValue=Loading...}" Margin="-14,-12,-16,5" Grid.ColumnSpan="2">
+                <InlineUIContainer>
+                    <Border BorderBrush="Black" BorderThickness="1" Height="90" Width="744"/>
+                </InlineUIContainer>
+            </TextBlock>
+
+            <TextBlock Background="GhostWhite" FontSize="30" Text="{Binding ResultString,IsAsync=True,FallbackValue=Loading..}" Margin="-14,78,-16,0" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <InlineUIContainer>
+                    <Border BorderBrush="Black" BorderThickness="1" Height="90" Width="744"/>
+                </InlineUIContainer>
+            </TextBlock>
+
+
+        </Grid>
+
+        <Grid Name="LowerPanelGrid" Grid.ColumnSpan="4" Margin="0,1,0,0" Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Name="NumPad" Grid.Column="1" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Background="AliceBlue" Grid.Row="0" Grid.Column="0" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="1" FontSize="20">1</Button>
+                <Button Background="AliceBlue" Grid.Row="0" Grid.Column="1" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="2" FontSize="20">2</Button>
+                <Button Background="AliceBlue" Grid.Row="0" Grid.Column="2" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="3" FontSize="20">3</Button>
+                <Button Background="AliceBlue" Grid.Row="1" Grid.Column="0" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="4" FontSize="20">4</Button>
+                <Button Background="AliceBlue" Grid.Row="1" Grid.Column="1" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="5" FontSize="20">5</Button>
+                <Button Background="AliceBlue" Grid.Row="1" Grid.Column="2" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="6" FontSize="20">6</Button>
+                <Button Background="AliceBlue" Grid.Row="2" Grid.Column="0" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="7" FontSize="20">7</Button>
+                <Button Background="AliceBlue" Grid.Row="2" Grid.Column="1" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="8" FontSize="20">8</Button>
+                <Button Background="AliceBlue" Grid.Row="2" Grid.Column="2" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="9" FontSize="20">9</Button>
+                <Button Background="AliceBlue" Grid.Row="3" Grid.Column="0" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="0" FontSize="20">0</Button>
+                <Button Background="AliceBlue" Grid.Row="3" Grid.Column="1" Command="{Binding HandleNumpadEqualButtonCommand}" CommandParameter="0"  FontSize="20">=</Button>
+                <Button Background="AliceBlue" Grid.Row="3" Grid.Column="2" Command="{Binding HandleNumpadNumberButtonCommand}" CommandParameter="." FontSize="20">.</Button>
+
+
+            </Grid>
+
+            <Grid Name="OperatorPad" Grid.Column="0" Margin="86,0,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Background="AliceBlue" Grid.Row="0" Command="{Binding HandleOperatorPadCommand}" CommandParameter="+" FontSize="30" Grid.ColumnSpan="2" Margin="114,0,0,0">+</Button>
+                <Button Background="AliceBlue" Grid.Row="1" Command="{Binding HandleOperatorPadCommand}" CommandParameter="-" FontSize="30" Grid.ColumnSpan="2" Margin="114,0,0,0">-</Button>
+                <Button Background="AliceBlue" Grid.Row="2" Command="{Binding HandleOperatorPadCommand}" CommandParameter="*" FontSize="30" Grid.ColumnSpan="2" Margin="114,0,0,0">*</Button>
+                <Button Background="AliceBlue" Grid.Row="3" Command="{Binding HandleOperatorPadCommand}" CommandParameter="/" FontSize="30" Grid.ColumnSpan="2" Margin="114,0,0,0" >/</Button>
+                <Button Background="AliceBlue" Grid.Row="0" Grid.RowSpan="2" Command="{Binding HandleClearCommand}" FontSize="30" Margin="-95,0,24,0" >C</Button>
+                <Button Background="AliceBlue" Grid.Row="2" Grid.RowSpan="2" Command="{Binding HandleBackspaceCommand}" FontSize="30" Margin="-95,0,24,0">←</Button>
+
+
+            </Grid>
+
+
+        </Grid>
+
+
+    </Grid>
+</Window>
